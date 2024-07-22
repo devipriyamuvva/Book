@@ -1,0 +1,40 @@
+<br>
+<div class="container">
+    <h1>Register</h1>
+    <form  class="register" (submit)="onSubmit()">
+        <label>Full Name</label>
+        <input id="name" type="text" name="name" [(ngModel)]="name">
+        <div id="nameError" class="error-message"></div>
+        <label>Email</label>
+        <input id="username" type="email" name="username" [(ngModel)]="username">
+        <div id="usernameError" class="error-message"></div>
+        <label>Gender</label>
+        <input id="gender" type="text" name="gender" [(ngModel)]="gender">
+        <div id="usernameError" class="error-message"></div>
+        <label>Password</label>
+        <input id="password" type="password" name="password"[(ngModel)]="password">
+        <div id="pwdError" class="error-message"></div>
+        <label>Confirm Password</label>
+        <input id="confirm" type="password" name="conpwd" [(ngModel)]="conpwd">
+        <div id="conpwdError" class="error-message"></div>
+        <label>Phone Number</label>
+        <input id="phone" type="tel" name="phone" [(ngModel)]="phone">
+        <div id="phoneError" class="error-message"></div>
+        <label>Address</label>
+        <input id="address" type="text" name="address" [(ngModel)]="address">
+        <div id="phoneError" class="error-message"></div>
+        <br>
+        <button type="submit" class="submit" (click)="onClick()">Submit</button>
+        <p style="font-weight: bolder;color: grey;margin-left: 40px;">----------- <b style="color: black;">OR SIGNUP WITH</b> ----------</p>
+        <!-- <br> -->
+        <div class="google">
+            <a href="https://accounts.google.com"><img [src]="google">GOOGLE</a>
+        </div>
+        <br>
+        <div class="facebook">
+            <a href="https://www.facebook.com/"><img [src]="facebook">FACEBOOK</a>
+        </div>
+        <br>
+    </form>
+</div>
+<br>

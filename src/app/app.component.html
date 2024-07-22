@@ -1,0 +1,13 @@
+<app-header (clickedButton)="buttonClicked($event)" (genreSelected)="onGenreSelected($event)" ></app-header>
+<br>
+<app-home *ngIf="currentPage=='' || currentPage=='Home'"></app-home>
+<app-books (clickedButton)="buttonClicked($event)" *ngIf="currentPage=='Books'"></app-books>
+<app-about *ngIf="currentPage=='AboutUs'"></app-about>
+<app-kids (clickedButton)="buttonClicked($event)" *ngIf="currentPage=='Kids'"></app-kids>
+<app-login (clickedbutton)="buttonClicked($event)" *ngIf="currentPage=='Login'"></app-login>
+<app-register *ngIf="currentPage=='Register'" (buttonClicked)="buttonClicked($event)"></app-register>
+<app-forgotpwd *ngIf="currentPage=='ForgotPwd'"></app-forgotpwd>
+<app-all *ngIf="currentPage=='All'" [filteredGenre]="selectedGenre" (clickedButton)="buttonClicked($event)"></app-all>
+<app-profile *ngIf="currentPage=='Profile'" (buttonClicked)="buttonClicked($event)"></app-profile>
+<br>
+<app-footer></app-footer>

@@ -1,0 +1,46 @@
+.container{
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    line-height: 1.8;
+    color: #000;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding: 15px;
+}
+img{
+    border-radius: 5px;
+    height: 200px;
+    width:200px
+}
+ul{
+    list-style-type: none;
+}
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+li,b{
+    font-size: 20px;
+    text-align: left;
+    padding: 0;
+}
+h6{
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+}
+.delete{
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.delete:hover{
+    cursor: pointer;
+}

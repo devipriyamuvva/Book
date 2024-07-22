@@ -1,0 +1,15 @@
+footer {
+    background-color:black;
+    color:white;
+    padding: 10px 0;
+    bottom: 0;
+    width: 101.5%;
+    margin:-7px;
+  }
+footer p{
+    text-align: center;
+    font-size: 13px;
+}
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

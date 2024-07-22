@@ -1,0 +1,26 @@
+<h2 class="books-title">Our Library</h2>
+<div class="container">
+<section class="search">
+  <!-- Two Way Data Binding
+  <span>Search: <input type="text" [(ngModel)]="searchVal"></span>
+  <p *ngIf="searchVal!=''">You've searched for "{{searchVal}}"</p> -->
+  <!-- Template Reference Variable -->
+  <!-- <span>Search: <input type="text" (input)="0" #searchRef></span>
+  <p>You've searched for "{{searchRef.value}}"</p> -->
+  <span>Search: <input type="text" #searchRef (input)="searchVal(searchRef.value)"></span>
+  <p *ngIf="searchval!=''">You've searched for "{{searchRef.value}}"</p>
+</section>
+<p style="text-align: center;font-size: 20px;font-weight: bold;" *ngIf="num_of_books!=0 && searchval!=''">{{num_of_books}} results found</p>
+<div class="books-container">
+    <div class="book-card" *ngFor="let book of filteredBooks()">
+      <img [src]="book.imageUrl" alt="{{ book.title }}" class="book-image">
+      <div class="book-details">
+        <h3 class="book-title">{{ book.title }}</h3>
+        <p class="book-author">{{ book.author }}</p>
+        <p class="book-description">{{ book.description }}</p>
+        <button class="read-now-button" (click)="add()">Read Now</button>
+        <button class="read-now-button" (click)="add()">Add to your library</button>
+      </div>
+    </div>
+  </div>
+</div>

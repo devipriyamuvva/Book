@@ -1,0 +1,15 @@
+<br>
+<div class="container">
+    <img *ngIf="gender=='male'" [src]="male">
+    <img *ngIf="gender=='female'" [src]="female">
+    <h6>{{name}}</h6>
+    <ul>
+        <li><b>Email</b> : {{username}}</li>
+        <li><b>Phone Number</b> : {{phone}}</li>
+        <li><b>Gender</b> : {{gender}}</li>
+        <li><b>Address</b> : {{address}}</li>
+        <br>
+        <li class="delete"><a (click)="onClick()">Delete Account</a></li>
+    </ul>
+</div>
+<br>

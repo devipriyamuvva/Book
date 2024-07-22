@@ -1,0 +1,28 @@
+<br>
+<body>
+<div class="container">
+    <h1>Login</h1>
+    <form (submit)="onSubmit()">
+            <label class="UN">Username </label>
+            <input type="email" id="username" name="un" [(ngModel)]="un">
+            <div id="unError" class="error"></div>
+            <label class="PWD">Password </label>
+            <input type="password" id="password" name="pwd" [(ngModel)]="pwd">
+            <div id="pwdError" class="error"></div>
+            <br>
+            <button type="submit">Login</button>
+    </form>
+    <h3 class="forgotpwd" style="padding-top: 10px;"><a (click)="onClickForgotPwd()">Forgot Password?</a></h3>
+    <h3  style="text-decoration: none;">Not a member? <a class="register" (click)="onClickRegister()" class="register">Register Now</a></h3>
+    <p style="font-weight: bolder;color: grey;padding-bottom: 20px;margin: 0;">--------------------- <b style="color: black;">OR LOGIN WITH</b> --------------------</p>
+    <div class="google">
+        <a href="https://accounts.google.com"><img [src]="google">GOOGLE</a>
+    </div>
+    <br>
+    <div class="facebook">
+        <a href="https://www.facebook.com/"><img [src]="facebook">FACEBOOK</a>
+    </div>
+    <br>
+</div>
+</body>
+<br>

@@ -1,0 +1,36 @@
+<nav>
+    <ul>
+      <!-- <li><img class="img" [src]="logo"></li> -->
+      <li class="title"><h1>Novel Nest</h1></li>
+      <li (click)="onClickHome()" class="li">HOME</li>
+      <li (click)="onClickBooks()"class="li">BOOKS</li>
+      <li class="li">GENRES
+        <br><br>
+        <ul  class="dropdown1">
+          <li class="g" (click)="onClickGenre('All')">ALL</li>
+          <li class="g" (click)="onClickGenre('Crime')" >CRIME</li>
+          <li class="g" (click)="onClickGenre('Romance')" >ROMANCE</li>
+          <li class="g" (click)="onClickGenre('Mystery')" >MYSTERY</li>
+          <li class="g" (click)="onClickGenre('Comedy')" >COMEDY</li>
+          <li class="g" (click)="onClickGenre('Horror')" >HORROR</li>
+          <li class="g" (click)="onClickGenre('Fantasy')" >FANTASY</li>
+          <li class="g" (click)="onClickGenre('Travel')">TRAVEL</li>
+        </ul>
+      </li>
+      <li (click)="onClickKids()"class="li">KIDS</li>
+      <li (click)="onClickAbout()"class="li">ABOUT US</li>
+      <li class="dropdown" (click)="sessionStatus()">
+        <img [src]="login" (click)="toggleDropdown()">
+        <br>
+        <ul class="dropdown-content" *ngIf="isDropdownOpen && !session">
+            <li class="login" (click)="onClickLogin()" (click)="toggleDropdown()"><b>LOGIN</b></li>
+            <li class="register" (click)="onClickRegister()" (click)="toggleDropdown()"><b>REGISTER</b></li>
+        </ul>
+        <ul class="dropdown-content" *ngIf="isDropdownOpen && session">
+          <li class="login" (click)="onClickProfile()" (click)="toggleDropdown()"><b>MY PROFILE</b></li>
+          <li class="login" (click)="toggleDropdown()"><b>MY LIBRARY</b></li>
+          <li class="register" (click)="onClickLogout()" (click)="toggleDropdown()"><b>LOGOUT</b></li>
+        </ul>
+      </li>
+    </ul>
+</nav>
