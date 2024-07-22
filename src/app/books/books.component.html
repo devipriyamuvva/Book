@@ -7,7 +7,7 @@
   <!-- Template Reference Variable -->
   <!-- <span>Search: <input type="text" (input)="0" #searchRef></span>
   <p>You've searched for "{{searchRef.value}}"</p> -->
-  <span>Search: <input type="text" #searchRef (input)="searchVal(searchRef.value)"></span>
+  <span>Search: <input type="text" #searchRef (input)="searchVal(searchRef.value)" placeholder="Search Books"></span>
   <p *ngIf="searchval!=''">You've searched for "{{searchRef.value}}"</p>
 </section>
 <p style="text-align: center;font-size: 20px;font-weight: bold;" *ngIf="num_of_books!=0 && searchval!=''">{{num_of_books}} results found</p>
