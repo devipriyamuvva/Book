@@ -34,16 +34,16 @@ export class LoginComponent {
   isvalid=false;
   onSubmit(){
     if(this.un==="" && this.pwd===""){
-      this.unError="Username cannot be empty"
-      this.pwdError="Password cannot be empty"
+      this.unError="This field is required."
+      this.pwdError="This field is required."
       return
     }
     if(this.pwd===""){
-      this.pwdError="Password cannot be empty"
+      this.pwdError="This field is required."
       return
     }
     if(this.un===""){
-      this.unError="Username cannot be empty"
+      this.unError="This field is required."
       return
     }
 

@@ -34,36 +34,36 @@ export class RegisterComponent {
 
   onSubmit(){
     if(this.username==="" && this.password==="" && this.name==="" && this.phone==="" && this.conpwd==="" && this.genderError===""){
-      this.nameError="Value cannot be empty"
-      this.usernameError="Value cannot be empty"
-      this.pwdError="Value cannot be empty"
-      this.conpwdError="Value cannot be empty"
-      this.phoneError="Value cannot be empty"
-      this.genderError="Value cannot be empty"
+      this.nameError="This field is required."
+      this.usernameError="This field is required."
+      this.pwdError="This field is required."
+      this.conpwdError="This field is required."
+      this.phoneError="This field is required."
+      this.genderError="This field is required."
       return
     }
     if(this.name===""){
-      this.nameError="Value cannot be empty"
+      this.nameError="This field is required."
       return
     }
     if(this.conpwd===""){
-      this.conpwdError="Value cannot be empty"
+      this.conpwdError="This field is required."
       return
     }
     if(this.phone===""){
-      this.phoneError="Value cannot be empty"
+      this.phoneError="This field is required."
       return
     }
     if(this.password===""){
-      this.pwdError="Value cannot be empty"
+      this.pwdError="This field is required."
       return
     }
     if(this.gender===""){
-      this.genderError="Value cannot be empty"
+      this.genderError="This field is required."
       return
     }
     if(this.username===""){
-      this.usernameError="Value cannot be empty"
+      this.usernameError="This field is required.."
       return
     }
     const details=localStorage.getItem("Details");
