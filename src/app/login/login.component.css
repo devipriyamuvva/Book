@@ -129,14 +129,15 @@ h1{
     text-align: left;
 }
 .loginerror{
-    border: 3px solid red;
-    color:red;
+    background-color: red;
+    color:white;
     font-weight: bold;
     padding:10px;
     border-radius: 5px;
     position: relative;
     text-align: left;
     font-size: 15px;
+    margin-bottom: 8px;
 }
 .close-btn {
     position: absolute;
