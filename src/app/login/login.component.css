@@ -128,3 +128,23 @@ h1{
     font-weight: bolder;
     text-align: left;
 }
+.loginerror{
+    border: 3px solid red;
+    color:red;
+    font-weight: bold;
+    padding:10px;
+    border-radius: 5px;
+    position: relative;
+    text-align: left;
+    font-size: 15px;
+}
+.close-btn {
+    position: absolute;
+    font-weight: bold;
+    top: 5px;
+    right: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
