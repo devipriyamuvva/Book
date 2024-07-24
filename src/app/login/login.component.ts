@@ -30,6 +30,7 @@ export class LoginComponent {
   unError=""
   un="";
   pwd="";
+  loginError=""
 
   isvalid=false;
   onSubmit(){
