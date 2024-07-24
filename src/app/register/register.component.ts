@@ -34,36 +34,36 @@ export class RegisterComponent {
 
   onSubmit(){
     if(this.username==="" && this.password==="" && this.name==="" && this.phone==="" && this.conpwd==="" && this.genderError===""){
-      this.nameError="Name cannot be empty"
-      this.usernameError="Email address cannot be empty"
-      this.pwdError="Password cannot be empty"
-      this.conpwdError="Password cannot be empty"
-      this.phoneError="Phone number cannot be empty"
-      this.genderError="Gender cannot be empty"
+      this.nameError="Value cannot be empty"
+      this.usernameError="Value cannot be empty"
+      this.pwdError="Value cannot be empty"
+      this.conpwdError="Value cannot be empty"
+      this.phoneError="Value cannot be empty"
+      this.genderError="Value cannot be empty"
       return
     }
     if(this.name===""){
-      this.nameError="Name cannot be empty"
+      this.nameError="Value cannot be empty"
       return
     }
     if(this.conpwd===""){
-      this.conpwdError="Password cannot be empty"
+      this.conpwdError="Value cannot be empty"
       return
     }
     if(this.phone===""){
-      this.phoneError="Phone number cannot be empty"
+      this.phoneError="Value cannot be empty"
       return
     }
     if(this.password===""){
-      this.pwdError="Password cannot be empty"
+      this.pwdError="Value cannot be empty"
       return
     }
-    if(this.genderError===""){
-      this.genderError="Gender cannot be empty"
+    if(this.gender===""){
+      this.genderError="Value cannot be empty"
       return
     }
     if(this.username===""){
-      this.usernameError="Username cannot be empty"
+      this.usernameError="Value cannot be empty"
       return
     }
     const details=localStorage.getItem("Details");
