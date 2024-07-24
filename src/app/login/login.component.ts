@@ -1,15 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output ,Input, inject} from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, Validators } from '@angular/forms';
 import { RouterModule,Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,RouterModule],
+  imports: [FormsModule,RouterModule,CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+
   google="google.png"
   facebook="facebook.jpg"
   @Output()
@@ -23,14 +25,28 @@ export class LoginComponent {
   }
 
   userinfo=localStorage.getItem("Details");
-  username="";
-  password="";
 
+  pwdError=""
+  unError=""
   un="";
   pwd="";
 
   isvalid=false;
   onSubmit(){
+    if(this.un==="" && this.pwd===""){
+      this.unError="Username cannot be empty"
+      this.pwdError="Password cannot be empty"
+      return
+    }
+    if(this.pwd===""){
+      this.pwdError="Password cannot be empty"
+      return
+    }
+    if(this.un===""){
+      this.unError="Username cannot be empty"
+      return
+    }
+
     var userDetails:any[]=[];
     if(this.userinfo){
       userDetails=JSON.parse(this.userinfo);
@@ -44,10 +60,18 @@ export class LoginComponent {
         break;
       }
     }
+
     if(!this.isvalid){
       window.alert("Invalid Credentials!!")
       this.un=''
       this.pwd=''
     }
+  }
+
+  clearUnError(){
+    this.unError=''
+  }
+  clearPwdError(){
+    this.pwdError=''
   }
 }

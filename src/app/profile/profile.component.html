@@ -7,7 +7,7 @@
         <li><b>Email</b> : {{username}}</li>
         <li><b>Phone Number</b> : {{phone}}</li>
         <li><b>Gender</b> : {{gender}}</li>
-        <li><b>Address</b> : {{address}}</li>
+        <li *ngIf="address!=''"><b>Address</b> : {{address}}</li>
         <br>
         <li class="delete"><a (click)="onClick()">Delete Account</a></li>
     </ul>

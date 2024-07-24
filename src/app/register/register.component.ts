@@ -22,7 +22,50 @@ export class RegisterComponent {
   gender="";
   userinfo:any[]=[];
 
+  nameError=""
+  usernameError=""
+  pwdError=""
+  conpwdError=""
+  phoneError=""
+  genderError=""
+
+  @Output()
+  buttonClicked:EventEmitter<string>=new EventEmitter<string>();
+
   onSubmit(){
+    if(this.username==="" && this.password==="" && this.name==="" && this.phone==="" && this.conpwd==="" && this.genderError===""){
+      this.nameError="Name cannot be empty"
+      this.usernameError="Email address cannot be empty"
+      this.pwdError="Password cannot be empty"
+      this.conpwdError="Password cannot be empty"
+      this.phoneError="Phone number cannot be empty"
+      this.genderError="Gender cannot be empty"
+      return
+    }
+    if(this.name===""){
+      this.nameError="Name cannot be empty"
+      return
+    }
+    if(this.conpwd===""){
+      this.conpwdError="Password cannot be empty"
+      return
+    }
+    if(this.phone===""){
+      this.phoneError="Phone number cannot be empty"
+      return
+    }
+    if(this.password===""){
+      this.pwdError="Password cannot be empty"
+      return
+    }
+    if(this.genderError===""){
+      this.genderError="Gender cannot be empty"
+      return
+    }
+    if(this.username===""){
+      this.usernameError="Username cannot be empty"
+      return
+    }
     const details=localStorage.getItem("Details");
     if(details){
       this.userinfo=JSON.parse(details);
@@ -37,6 +80,7 @@ export class RegisterComponent {
     };
     this.userinfo.push(profile);
     localStorage.setItem("Details",JSON.stringify(this.userinfo));
+    this.buttonClicked.emit("Login")
     window.alert("Registration Successful !!")
     this.username="";
     this.password="";
@@ -46,10 +90,24 @@ export class RegisterComponent {
     this.address="";
     this.gender="";
   }
-  @Output()
-  buttonClicked:EventEmitter<string>=new EventEmitter<string>();
 
-  onClick(){
-    this.buttonClicked.emit("Login")
+  clearNameError(){
+    this.nameError=""
+  }
+  clearUsernameError(){
+    this.usernameError=""
+  }
+  clearPwdError(){
+    this.pwdError=""
+  }
+  clearConPwdError(){
+    this.conpwdError=""
+  }
+  clearPhoneError(){
+    this.phoneError=""
+  }
+  clearGenderError(){
+    this.genderError=""
   }
 }
+

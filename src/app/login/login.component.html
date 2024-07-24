@@ -2,15 +2,15 @@
 <body>
 <div class="container">
     <h1>Login</h1>
-    <form (submit)="onSubmit()">
+    <form>
             <label class="UN">Username </label>
-            <input type="email" id="username" name="un" [(ngModel)]="un">
-            <div id="unError" class="error"></div>
+            <input type="email" id="username" name="un" [(ngModel)]="un" (input)="clearUnError()">
+            <div id="unError" class="error" *ngIf="unError!=''">{{unError}}</div>
             <label class="PWD">Password </label>
-            <input type="password" id="password" name="pwd" [(ngModel)]="pwd">
-            <div id="pwdError" class="error"></div>
+            <input type="password" id="password" name="pwd" [(ngModel)]="pwd" (input)="clearPwdError()">
+            <div id="pwdError" class="error" *ngIf="pwdError!=''">{{pwdError}}</div>
             <br>
-            <button type="submit">Login</button>
+            <button type="submit" (click)="onSubmit()">Login</button>
     </form>
     <h3 class="forgotpwd" style="padding-top: 10px;"><a (click)="onClickForgotPwd()">Forgot Password?</a></h3>
     <h3  style="text-decoration: none;">Not a member? <a class="register" (click)="onClickRegister()" class="register">Register Now</a></h3>
