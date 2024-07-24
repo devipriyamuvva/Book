@@ -62,7 +62,8 @@ export class LoginComponent {
     }
 
     if(!this.isvalid){
-      window.alert("Invalid Credentials!!")
+      this.loginError="Invalid Credentials"
+      // window.alert("Invalid Credentials!!")
       this.un=''
       this.pwd=''
     }
@@ -73,5 +74,8 @@ export class LoginComponent {
   }
   clearPwdError(){
     this.pwdError=''
+  }
+  clearLoginError() {
+    this.loginError = '';
   }
 }
