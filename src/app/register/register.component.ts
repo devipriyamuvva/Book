@@ -54,8 +54,17 @@ export class RegisterComponent {
       this.phoneError="This field is required."
       return
     }
+    if(this.phone.length!=10){
+      this.phoneError="Invalid Phone Number"
+      return
+    }
     if(this.password===""){
       this.pwdError="This field is required."
+      return
+    }
+    if(this.password!==this.conpwd){
+      this.pwdError="Passwords donot match"
+      this.conpwdError="Passwords donot match"
       return
     }
     if(this.gender===""){
