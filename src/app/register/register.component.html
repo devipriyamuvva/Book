@@ -2,22 +2,22 @@
 <div class="container">
     <h1>Register</h1>
     <form  class="register">
-        <label>Full Name</label>
+        <label>Full Name*</label>
         <input id="name" type="text" name="name" [(ngModel)]="name" (input)="clearNameError()">
         <div id="nameError" class="error-message">{{nameError}}</div>
-        <label>Email</label>
+        <label>Email*</label>
         <input id="username" type="email" name="username" [(ngModel)]="username" (input)="clearUsernameError()">
         <div id="usernameError" class="error-message">{{usernameError}}</div>
-        <label>Gender</label>
+        <label>Gender*</label>
         <input id="gender" type="text" name="gender" [(ngModel)]="gender" (input)="clearGenderError()">
         <div id="genderError" class="error-message">{{genderError}}</div>
-        <label>Password</label>
+        <label>Password*</label>
         <input id="password" type="password" name="password" [(ngModel)]="password" (input)="clearPwdError()">
-        <div id="pwdError" class="error-message">{{pwdError}}</div>
-        <label>Confirm Password</label>
+        <div id="pwdError" class="error-message" [innerHTML]="pwdError">{{pwdError}}</div>
+        <label>Confirm Password*</label>
         <input id="confirm" type="password" name="conpwd" [(ngModel)]="conpwd" (input)="clearConPwdError()">
         <div id="conpwdError" class="error-message">{{conpwdError}}</div>
-        <label>Phone Number</label>
+        <label>Phone Number*</label>
         <input id="phone" type="tel" name="phone" [(ngModel)]="phone" (input)="clearPhoneError()">
         <div id="phoneError" class="error-message">{{phoneError}}</div>
         <label>Address</label>

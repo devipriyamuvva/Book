@@ -33,51 +33,77 @@ export class RegisterComponent {
   buttonClicked:EventEmitter<string>=new EventEmitter<string>();
 
   onSubmit(){
-    if(this.username==="" && this.password==="" && this.name==="" && this.phone==="" && this.conpwd==="" && this.genderError===""){
-      this.nameError="This field is required."
-      this.usernameError="This field is required."
-      this.pwdError="This field is required."
-      this.conpwdError="This field is required."
-      this.phoneError="This field is required."
-      this.genderError="This field is required."
-      return
-    }
+    var hasErrors=false;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const pwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
     if(this.name===""){
       this.nameError="This field is required."
-      return
+      hasErrors=true
     }
     if(this.conpwd===""){
       this.conpwdError="This field is required."
-      return
+      hasErrors=true
     }
     if(this.phone===""){
       this.phoneError="This field is required."
-      return
-    }
-    if(this.phone.length!=10){
-      this.phoneError="Invalid Phone Number"
-      return
+      hasErrors=true
     }
     if(this.password===""){
-      this.pwdError="This field is required."
-      return
-    }
-    if(this.password!==this.conpwd){
-      this.conpwdError="Passwords donot match"
-      return
+      this.pwdError="<p>This field is required.</p>"
+      hasErrors=true
     }
     if(this.gender===""){
       this.genderError="This field is required."
-      return
+      hasErrors=true
     }
     if(this.username===""){
-      this.usernameError="This field is required.."
+      this.usernameError="This field is required."
+      hasErrors=true
+    }
+
+    if(hasErrors){
       return
     }
+    
+    var hasError=false;
+
+    if(this.password!==this.conpwd){
+      this.conpwdError="Passwords donot match"
+      hasError=true
+    }
+
+    if(this.phone.length!=10){
+      this.phoneError="Invalid Phone Number"
+      hasError=true
+    }
+
+    if(!pwdRegex.test(this.password)){
+      this.pwdError="Password must contain at least 1 digit,<br> 1 lowercase letter,1 uppercase letter,<br>1 special character <br> length must be 8 characters"
+      hasError=true
+    }
+
+    if(!emailRegex.test(this.username)){
+      this.usernameError="Invalid Email Address"
+      hasError=true
+    }
+
     const details=localStorage.getItem("Details");
     if(details){
       this.userinfo=JSON.parse(details);
+      for(var i=0;i<this.userinfo.length;i++){
+        if(this.userinfo[i].username===this.username){
+          this.usernameError="Email Address already exists"
+          hasError=true
+          break;
+        }
+      }
     }
+
+    if(hasError){
+      return
+    }
+
     const profile={
       username:this.username,
       password:this.password,
@@ -90,6 +116,10 @@ export class RegisterComponent {
     localStorage.setItem("Details",JSON.stringify(this.userinfo));
     this.buttonClicked.emit("Login")
     window.alert("Registration Successful !!")
+    this.reset();
+  }
+
+  reset(){
     this.username="";
     this.password="";
     this.name="";
