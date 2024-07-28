@@ -53,3 +53,30 @@ button{
     font-size: 20px;
     height:50px;
 }
+.usernameError{
+    background-color: rgb(170, 39, 15);
+    color:white;
+    font-weight: bold;
+    padding:10px;
+    border-radius: 5px;
+    position: relative;
+    text-align: left;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+.close-btn {
+    position: absolute;
+    font-weight: bold;
+    top: 5px;
+    right: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+.error{
+    color:red;
+    font-weight: bold;
+    text-align: left;
+    /* margin-left: 0px; */
+}
