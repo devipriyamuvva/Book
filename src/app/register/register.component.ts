@@ -63,7 +63,6 @@ export class RegisterComponent {
       return
     }
     if(this.password!==this.conpwd){
-      this.pwdError="Passwords donot match"
       this.conpwdError="Passwords donot match"
       return
     }
