@@ -6,10 +6,10 @@
             <div id="unError" class="loginerror" *ngIf="loginError!=''">{{loginError}}
                 <span class="close-btn" (click)="clearLoginError()">x</span>
             </div>
-            <label class="UN">Username </label>
+            <label class="UN">Username* </label>
             <input type="email" id="username" name="un" [(ngModel)]="un" (input)="clearUnError()">
             <div id="unError" class="error" *ngIf="unError!=''">{{unError}}</div>
-            <label class="PWD">Password </label>
+            <label class="PWD">Password* </label>
             <input type="password" id="password" name="pwd" [(ngModel)]="pwd" (input)="clearPwdError()">
             <div id="pwdError" class="error" *ngIf="pwdError!=''">{{pwdError}}</div>
             <br>

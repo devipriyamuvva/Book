@@ -13,6 +13,7 @@ export class ForgotpwdComponent {
   username=""
   password=""
   conpwd=""
+  unError=""
   pwdError=""
   pwdError2=""
   userinfo:any=localStorage.getItem("Details")
@@ -36,6 +37,23 @@ export class ForgotpwdComponent {
       }
     }
 
+    var hasErrors=false
+    if(this.username===""){
+      this.unError="This field is required."
+      hasErrors=true
+    }
+    if(this.conpwd===""){
+      this.pwdError2="This field is required."
+      hasErrors=true
+    }
+    if(this.password===""){
+      this.pwdError="This field is required."
+      hasErrors=true
+    }
+    if(hasErrors){
+      return
+    }
+    
     if(!usernameExists){
       this.usernameError='Username does not exist.';
       return
@@ -65,6 +83,9 @@ export class ForgotpwdComponent {
     }
   }
 
+  clearError(){
+    this.unError=""
+  }
   clearUsernameError(){
     this.usernameError=""
   }

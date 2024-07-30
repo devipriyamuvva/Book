@@ -5,13 +5,13 @@
         <div id="unError" class="usernameError" *ngIf="usernameError!=''">{{usernameError}}
             <span class="close-btn" (click)="clearUsernameError()">x</span>
         </div>
-        <label class="UN">Username   </label>
-        <input type="email" id="username" name="username" [(ngModel)]="username"> 
-        <div id="unError" class="error"></div>
-        <label class="PWD"> New Password   </label>
+        <label class="UN">Username*   </label>
+        <input type="email" id="username" name="username" [(ngModel)]="username" (input)="clearError()"> 
+        <div id="unError" class="error">{{unError}}</div>
+        <label class="PWD"> New Password*   </label>
         <input type="password" id="password" name="password" [(ngModel)]="password" (input)="clearPwdError()">
         <div id="pwdError1" class="error" [innerHTML]="pwdError">{{pwdError}}</div>
-        <label class="PWD"> Confirm Password   </label>
+        <label class="PWD"> Confirm Password*  </label>
         <input type="password" id="conpassword" [(ngModel)]="conpwd" name="conpwd" (input)="clearConPwdError()">
         <div id="pwdError2" class="error">{{pwdError2}}</div>
         <br>
